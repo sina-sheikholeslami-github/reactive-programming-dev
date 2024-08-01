@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 public class SubscriberImpl implements Subscriber<String> {
 
-    private static final Logger logger = LoggerFactory.getLogger(SubscriberImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(SubscriberImpl.class);
     private Subscription subscription;
 
     public Subscription geSubscription() {
@@ -16,17 +16,17 @@ public class SubscriberImpl implements Subscriber<String> {
 
     @Override
     public void onComplete() {
-        logger.info("Completed!");
+        log.info("Completed!");
     }
 
     @Override
     public void onError(Throwable throwable) {
-        logger.error("Error", throwable);
+        log.error("Error", throwable);
     }
 
     @Override
     public void onNext(String email) {
-        logger.info("Received: {}", email);
+        log.info("Received: {}", email);
     }
 
     @Override
